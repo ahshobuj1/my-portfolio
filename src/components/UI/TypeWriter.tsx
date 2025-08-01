@@ -4,17 +4,19 @@ import Typewriter from 'typewriter-effect';
 
 const TypeWriter = () => {
   return (
-    <Typewriter
-      options={{
-        strings: [
-          'MERN Stack Developer',
-          'Frontend Developer',
-          'Backend Developer',
-        ],
-        autoStart: true,
-        loop: true,
-      }}
-    />
+    <span className="text-blue-600 text-3xl font-semibold">
+      <Typewriter
+        options={{
+          strings: [
+            'MERN Stack Developer',
+            'Frontend Developer',
+            'Backend Developer',
+          ],
+          autoStart: true,
+          loop: true,
+        }}
+      />
+    </span>
   );
 };
 

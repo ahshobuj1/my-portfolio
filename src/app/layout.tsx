@@ -1,19 +1,15 @@
 import type {Metadata} from 'next';
-import {Geist, Geist_Mono} from 'next/font/google';
+import {Plus_Jakarta_Sans} from 'next/font/google';
 import './globals.css';
-import Navbar from '@/components/Shared/Navbar';
 import Footer from '@/components/Shared/Footer';
 import {AppRouterCacheProvider} from '@mui/material-nextjs/v15-appRouter';
 import Providers from '@/lib/Providers/Providers';
+import Header from '@/components/Shared/Header';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: '--font-plus-jakarta',
   subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600', '700', '800'],
 });
 
 export const metadata: Metadata = {
@@ -29,12 +25,11 @@ export default function RootLayout({
   return (
     <Providers>
       <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <body className={`${plusJakarta.variable} antialiased`}>
           <AppRouterCacheProvider>
             {/* Background Container (fixed position) */}
             <div
-              className="fixed inset-0 -z-50"
+              className="fixed inset-0 -z-50 "
               style={{
                 background: '#f8fafc',
                 backgroundImage: `
@@ -51,15 +46,16 @@ export default function RootLayout({
 
             {/* Content Container (relative position) */}
             <div className="relative z-0 min-h-screen w-full">
-              <div className="max-w-[1280px] mx-auto px-1 lg:px-0">
-                <Navbar />
+              <div className="px-1 lg:px-0">
+                {/* <Navbar /> */}
+                <Header />
                 <main className="relative z-10">{children}</main>
                 <Footer />
               </div>
             </div>
           </AppRouterCacheProvider>
         </body>
-      </html>{' '}
+      </html>
     </Providers>
   );
 }

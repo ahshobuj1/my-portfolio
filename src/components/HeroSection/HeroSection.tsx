@@ -49,10 +49,9 @@ const HeroSection = () => {
             </Typography>
 
             <Typography
-              variant="h2"
               textAlign={{xs: 'center', md: 'start'}}
               fontWeight={700}
-              fontSize={{xs: 40, md: 50}}
+              fontSize={{xs: 40, md: 60}}
               color="secondary.main"
               sx={{letterSpacing: 1.2, lineHeight: 1}}>
               A H SHOBUJ

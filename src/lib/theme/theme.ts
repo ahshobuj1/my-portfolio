@@ -6,6 +6,7 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: '#2aa9ff',
+      light: '#2aa9ff10',
     },
     secondary: {
       main: '#12304b',

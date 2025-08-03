@@ -24,6 +24,9 @@ const Photo = () => {
             src={'/assets/no-bg.png'}
             priority
             quality={100}
+            height={undefined}
+            width={undefined}
+            sizes="auto"
             fill
             alt="profile image"
             className="object-contain rounded-b-full"

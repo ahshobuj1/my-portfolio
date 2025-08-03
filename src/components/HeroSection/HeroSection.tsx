@@ -108,8 +108,6 @@ const HeroSection = () => {
 
               <Button
                 startIcon={<IoMdCloudDownload />}
-                variant="contained"
-                color="primary"
                 sx={{
                   textTransform: 'none',
                   px: 3,

@@ -15,6 +15,9 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: 'A H Shobuj',
   description: 'Frontend, Backend, MERN Stack Developer',
+  icons: {
+    icon: '/my-logo.png', // Path from public folder
+  },
 };
 
 export default function RootLayout({

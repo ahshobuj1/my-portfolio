@@ -12,6 +12,8 @@ import Container from '@mui/material/Container';
 import AdbIcon from '@mui/icons-material/Adb';
 import {Stack} from '@mui/material';
 import Link from 'next/link';
+import myLogo from '@/assets/images/my-logo.png';
+import Image from 'next/image';
 
 const pages = ['Skills', 'Pricing', 'Contact'];
 
@@ -40,21 +42,22 @@ function Header() {
       <Container>
         <Toolbar disableGutters>
           {/* Logo large device */}
-          <AdbIcon sx={{display: {xs: 'none', md: 'flex'}, mr: 1}} />
+          {/* <AdbIcon sx={{display: {xs: 'none', md: 'flex'}, mr: 1}} /> */}
+          <Image src={myLogo} alt="logo" height={40} width={40} />
           <Typography
             variant="h6"
             noWrap
-            component="a"
+            component={Link}
             href="#app-bar-with-responsive-menu"
             sx={{
-              mr: 2,
+              mx: 2,
               display: {xs: 'none', md: 'flex'},
-              fontFamily: 'monospace',
+              fontFamily: 'cursive',
               fontWeight: 700,
               letterSpacing: '.3rem',
               textDecoration: 'none',
             }}>
-            LOGO
+            SHOBUJ
           </Typography>
 
           {/* Logo mini device */}

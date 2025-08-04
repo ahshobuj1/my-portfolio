@@ -1,4 +1,11 @@
-import {Box, Button, Container, Divider, Typography} from '@mui/material';
+import {
+  Box,
+  Button,
+  Container,
+  Divider,
+  Pagination,
+  Typography,
+} from '@mui/material';
 import React from 'react';
 import ScrollHoverImage from './ScrollHoverImage';
 import projectImage from '@/assets/images/projects-image.jpg';
@@ -116,6 +123,20 @@ const Projects = () => {
               <ScrollHoverImage src={projectImage} alt="project image" />
             </div>
           </div>
+
+          <Box
+            display={'flex'}
+            justifyContent={{xs: 'center', md: 'end'}}
+            my={5}>
+            <Pagination
+              color="primary"
+              shape="rounded"
+              size="large"
+              count={10}
+              variant="outlined"
+              //  page={page} onChange={handleChange}
+            />
+          </Box>
         </Box>
       </Container>
     </div>

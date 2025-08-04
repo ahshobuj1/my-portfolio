@@ -1,7 +1,8 @@
 import Image from 'next/image';
+import type {StaticImageData} from 'next/image';
 
 interface IHoverImageProps {
-  src: string | any;
+  src: string | StaticImageData;
   alt: string;
 }
 

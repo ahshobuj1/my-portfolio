@@ -61,7 +61,7 @@ function Header() {
           </Typography>
 
           {/* Logo mini device */}
-          <AdbIcon sx={{display: {xs: 'flex', md: 'none'}, mr: 1}} />
+          <Image src={myLogo} alt="logo" height={40} width={40} />
           <Typography
             variant="h5"
             noWrap
@@ -77,7 +77,7 @@ function Header() {
               color: 'inherit',
               textDecoration: 'none',
             }}>
-            LOGO
+            SHOBUJ
           </Typography>
 
           {/* Nav Items */}

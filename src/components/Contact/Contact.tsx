@@ -51,11 +51,12 @@ const Contact = () => {
 
       if (!result.success) {
         setStatus('error');
-        setMessage(result?.message);
+        setMessage(result?.message || 'Something went wrong');
         return null;
       }
 
       setStatus('success');
+      setMessage(result?.message || 'Your message was sent successfully!');
       reset();
 
       console.log(result);
@@ -180,11 +181,13 @@ const Contact = () => {
                   fullWidth
                   sx={{my: 2}}
                   error={!!errors.projectType}>
-                  <InputLabel>Project Type (optional)</InputLabel>
+                  <InputLabel>Project Type</InputLabel>
                   <Select
-                    label="Project Type (optional)"
+                    label="Project Type"
                     defaultValue=""
-                    {...register('projectType')}>
+                    {...register('projectType', {
+                      required: 'Please select projects',
+                    })}>
                     <MenuItem value="frontend">Frontend Development</MenuItem>
                     <MenuItem value="backend">Backend API&apos;s</MenuItem>
                     <MenuItem value="fullstack">Full-Stack Website</MenuItem>
@@ -192,11 +195,11 @@ const Contact = () => {
                 </FormControl>
 
                 <TextField
-                  label="Notes *"
+                  label="Send Notes *"
                   {...register('message', {
-                    required: 'Write is required',
+                    required: 'Message is required',
                   })}
-                  error={!!errors.email}
+                  error={!!errors.message}
                   multiline
                   rows={3}
                   placeholder="Share your idea!"
@@ -208,10 +211,11 @@ const Contact = () => {
                 <Button
                   type="submit"
                   color="secondary"
+                  sx={{marginBottom: 1}}
                   fullWidth
                   disabled={status === 'loading'}
                   startIcon={<FaPaperPlane />}>
-                  {status === 'loading' ? 'Sending..' : 'Let&apos;S CONNECT'}
+                  {status === 'loading' ? 'Sending..' : "LET'S CONNECT"}
                 </Button>
 
                 {status === 'success' ? (

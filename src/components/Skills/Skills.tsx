@@ -33,7 +33,7 @@ const Skills = () => {
                 </TabList>
               </Box>
               <TabPanel value="1">
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-2">
                   {frontendSkills.map((item) => (
                     <SkillCard item={item} key={item.name} />
                   ))}
@@ -54,14 +54,14 @@ const Skills = () => {
                 </div>
               </TabPanel>
               <TabPanel value="2">
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-2">
                   {backendSkills.map((item) => (
                     <SkillCard item={item} key={item.name} />
                   ))}
                 </div>
               </TabPanel>
               <TabPanel value="3">
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-2">
                   {otherSkills.map((item) => (
                     <SkillCard item={item} key={item.name} />
                   ))}

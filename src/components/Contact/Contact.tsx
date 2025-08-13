@@ -181,12 +181,12 @@ const Contact = () => {
                   fullWidth
                   sx={{my: 2}}
                   error={!!errors.projectType}>
-                  <InputLabel> Select Work</InputLabel>
+                  <InputLabel>Select Service</InputLabel>
                   <Select
-                    label="Project Type"
+                    label="Select Service"
                     defaultValue=""
                     {...register('projectType', {
-                      required: 'Please select projects',
+                      required: 'Please select a service',
                     })}>
                     <MenuItem value="frontend">Frontend Development</MenuItem>
                     <MenuItem value="backend">Backend API&apos;s</MenuItem>

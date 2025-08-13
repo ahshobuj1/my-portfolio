@@ -1,5 +1,4 @@
 import {TProject} from '@/types';
-import projectImage from '@/assets/images/projects-image.jpg';
 
 export const projects: TProject[] = [
   {
@@ -11,7 +10,8 @@ export const projects: TProject[] = [
       'Modern e-commerce solution with payment integration and admin dashboard',
     longDescription:
       'A comprehensive e-commerce platform built with Next.js 14, featuring user authentication, product management, shopping cart, payment processing with Stripe, order tracking, and a complete admin dashboard for inventory management.',
-    image: projectImage,
+    image:
+      'https://res.cloudinary.com/duu47ahmd/image/upload/v1755121351/react-next-js-frontend-website_embdac.jpg',
     images: [],
     skills: [
       'Next.js',
@@ -49,7 +49,8 @@ export const projects: TProject[] = [
       'Team collaboration tool with real-time updates and project tracking',
     longDescription:
       'A powerful SaaS application for team task management featuring real-time collaboration, project analytics, team workspaces, and subscription-based pricing with multi-tenant architecture.',
-    image: projectImage,
+    image:
+      'https://res.cloudinary.com/duu47ahmd/image/upload/v1755121351/react-next-js-frontend-website_embdac.jpg',
     images: [],
     skills: ['React', 'Node.js', 'Socket.io', 'PostgreSQL', 'Docker', 'AWS'],
     liveLink: 'https://taskflow-pro.com',
@@ -80,7 +81,8 @@ export const projects: TProject[] = [
       'Beautiful restaurant website with menu management and online ordering system',
     longDescription:
       'A stunning restaurant website featuring online menu, table reservation system, online food ordering with payment integration, and an admin panel for menu and order management.',
-    image: projectImage,
+    image:
+      'https://res.cloudinary.com/duu47ahmd/image/upload/v1755121351/react-next-js-frontend-website_embdac.jpg',
     images: [],
     skills: ['Next.js', 'MongoDB', 'Stripe', 'Tailwind CSS', 'Framer Motion'],
     liveLink: 'https://bellavista-demo.vercel.app',

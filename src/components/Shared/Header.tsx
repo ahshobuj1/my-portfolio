@@ -17,7 +17,7 @@ import Image from 'next/image';
 const pages = [
   {
     label: 'Projects',
-    href: '/',
+    href: '/projects',
   },
   {
     label: 'Skills',

@@ -124,7 +124,7 @@ export async function POST(request: Request) {
           <div style="margin-bottom: 15px;">
             <p style="margin: 0; font-weight: bold; color: #007bff;">🐙 GitHub</p>
             <p style="margin: 3px 0; color: #495057;">
-              <a href="https://github.com/ahshobuj" style="color: #007bff; text-decoration: none;">Visit Profile</a>
+              <a href="https://github.com/ahshobuj1" style="color: #007bff; text-decoration: none;">Visit Profile</a>
             </p>
           </div>
 

@@ -1,16 +1,16 @@
 import {Box, Stack, Typography} from '@mui/material';
 
-interface ISillProps {
+interface ISkillProps {
   name: string;
   desc: string;
   icon: React.ReactNode;
 }
 
-const SkillCard = ({item}: {item: ISillProps}) => {
+const SkillCard = ({item}: {item: ISkillProps}) => {
   return (
     <>
       <Stack
-        spacing={1}
+        spacing={{xs: 0.5, md: 1}}
         height={'100%'}
         justifyContent={'start'}
         borderRadius={2}
@@ -28,7 +28,9 @@ const SkillCard = ({item}: {item: ISillProps}) => {
           },
         }}>
         <Box bgcolor={'gray-50'} borderRadius={1} padding={1}>
-          <span className="text-secondary-main text-5xl">{item.icon}</span>
+          <span className="text-secondary-main text-4xl md:text-5xl">
+            {item.icon}
+          </span>
         </Box>
 
         <Box>

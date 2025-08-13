@@ -9,7 +9,6 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import AdbIcon from '@mui/icons-material/Adb';
 import {Stack} from '@mui/material';
 import Link from 'next/link';
 import myLogo from '@/assets/images/my-logo.png';

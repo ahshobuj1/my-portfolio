@@ -12,16 +12,20 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import React from 'react';
+import React, {useState} from 'react';
 import {FaPhoneSquareAlt} from 'react-icons/fa';
 import {MdLocationPin, MdOutlineAlternateEmail} from 'react-icons/md';
 import SocialLinks from '../UI/SocialLinks';
 import {useForm, SubmitHandler, FieldValues} from 'react-hook-form';
 import SectionTitle from '../UI/SectionTitle';
 import {FaPaperPlane} from 'react-icons/fa';
-import {IoMdSend} from 'react-icons/io';
 
 const Contact = () => {
+  const [message, setMessage] = useState<string>('');
+  const [status, setStatus] = useState<'loading' | 'success' | 'error' | ''>(
+    ''
+  );
+
   const {
     register,
     handleSubmit,
@@ -29,9 +33,37 @@ const Contact = () => {
     reset,
   } = useForm<FieldValues>();
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+    setStatus('loading');
     console.log(data);
-    reset();
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    };
+
+    try {
+      const response = await fetch('/api/contact', options);
+      const result = await response.json();
+
+      if (!result.success) {
+        setStatus('error');
+        setMessage(result?.message);
+        return null;
+      }
+
+      setStatus('success');
+      reset();
+
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+      setStatus('error');
+      setMessage('Something went wrong');
+    }
   };
 
   return (
@@ -167,7 +199,8 @@ const Contact = () => {
                   error={!!errors.email}
                   multiline
                   rows={3}
-                  defaultValue="Send Message"
+                  placeholder="Share your idea!"
+                  defaultValue=""
                   sx={{mb: 4, mt: 2}}
                   fullWidth
                 />
@@ -176,9 +209,22 @@ const Contact = () => {
                   type="submit"
                   color="secondary"
                   fullWidth
+                  disabled={status === 'loading'}
                   startIcon={<FaPaperPlane />}>
-                  Let&apos;S CONNECT
+                  {status === 'loading' ? 'Sending..' : 'Let&apos;S CONNECT'}
                 </Button>
+
+                {status === 'success' ? (
+                  <Typography color="green">{message}</Typography>
+                ) : (
+                  ''
+                )}
+
+                {status === 'error' ? (
+                  <Typography color="red">{message}</Typography>
+                ) : (
+                  ''
+                )}
               </Box>
             </Stack>
           </div>

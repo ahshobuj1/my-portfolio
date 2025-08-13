@@ -1,21 +1,37 @@
-import {Container, Stack, Typography} from '@mui/material';
+import {Box, Container, Stack, Typography} from '@mui/material';
 import React from 'react';
-import SocialLinks from '../UI/SocialLinks';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
     <div className="bg-secondary-main text-white">
       <Container>
         <Stack
-          py={1}
+          py={2}
           justifyContent={'space-between'}
           flexDirection={{xs: 'column-reverse', md: 'row'}}
           gap={2}>
           <Typography color="lightgray" fontSize={14}>
-            All rights reserved @ A H Shobuj
+            All rights reserved &copy; A H Shobuj
           </Typography>
 
-          <SocialLinks />
+          <Box sx={{display: 'flex', gap: 2, color: 'lightgray'}}>
+            <Link
+              className="hover:text-primary-main transition-colors"
+              href={'/'}>
+              Home
+            </Link>
+            <Link
+              className="hover:text-primary-main transition-colors"
+              href={'#'}>
+              Contact
+            </Link>
+            <Link
+              className="hover:text-primary-main transition-colors"
+              href={'#'}>
+              Projects
+            </Link>
+          </Box>
         </Stack>
       </Container>
     </div>

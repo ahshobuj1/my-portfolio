@@ -147,7 +147,7 @@ const Contact = () => {
                 borderRadius={2}
                 onSubmit={handleSubmit(onSubmit)}
                 px={2}>
-                <div className="flex gap-5 mb-3">
+                <div className="flex justify-between gap-3 mb-3">
                   <TextField
                     label="First Name"
                     {...register('firstName', {
@@ -181,7 +181,7 @@ const Contact = () => {
                   fullWidth
                   sx={{my: 2}}
                   error={!!errors.projectType}>
-                  <InputLabel>Project Type</InputLabel>
+                  <InputLabel> Select Work</InputLabel>
                   <Select
                     label="Project Type"
                     defaultValue=""
@@ -190,7 +190,9 @@ const Contact = () => {
                     })}>
                     <MenuItem value="frontend">Frontend Development</MenuItem>
                     <MenuItem value="backend">Backend API&apos;s</MenuItem>
-                    <MenuItem value="fullstack">Full-Stack Website</MenuItem>
+                    <MenuItem value="fullstack">
+                      Full-Stack Web Development
+                    </MenuItem>
                   </Select>
                 </FormControl>
 

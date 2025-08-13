@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import {motion} from 'framer-motion';
+import profileImage from '@/assets/images/no-bg.png';
 
 const Photo = () => {
   return (
@@ -21,7 +22,7 @@ const Photo = () => {
           }}
           className="w-[298px] h-[298px] lg:w-[498px] lg:h-[498px] mix-blend-lighten absolute ">
           <Image
-            src={'/assets/no-bg.png'}
+            src={profileImage}
             priority
             quality={100}
             height={undefined}

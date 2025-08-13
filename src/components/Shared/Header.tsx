@@ -14,7 +14,24 @@ import Link from 'next/link';
 import myLogo from '@/assets/images/my-logo.png';
 import Image from 'next/image';
 
-const pages = ['Skills', 'Pricing', 'Contact'];
+const pages = [
+  {
+    label: 'Projects',
+    href: '/',
+  },
+  {
+    label: 'Skills',
+    href: '/',
+  },
+  {
+    label: 'Pricing',
+    href: '/',
+  },
+  {
+    label: 'Contact',
+    href: '/',
+  },
+];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -42,14 +59,20 @@ function Header() {
         <Toolbar disableGutters>
           {/* Logo large device */}
           {/* <AdbIcon sx={{display: {xs: 'none', md: 'flex'}, mr: 1}} /> */}
-          <Image src={myLogo} alt="logo" height={40} width={40} />
+          <Image
+            src={myLogo}
+            alt="logo"
+            height={40}
+            width={40}
+            className="hidden md:flex"
+          />
           <Typography
             variant="h6"
             noWrap
             component={Link}
-            href="#app-bar-with-responsive-menu"
+            href="/"
             sx={{
-              mx: 2,
+              mx: 1,
               display: {xs: 'none', md: 'flex'},
               fontFamily: 'cursive',
               fontWeight: 700,
@@ -60,20 +83,25 @@ function Header() {
           </Typography>
 
           {/* Logo mini device */}
-          <Image src={myLogo} alt="logo" height={40} width={40} />
+          <Image
+            src={myLogo}
+            alt="logo"
+            height={40}
+            width={40}
+            className="md:hidden"
+          />
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
+            component={Link}
+            href="/"
             sx={{
-              mr: 2,
+              mx: 1,
               display: {xs: 'flex', md: 'none'},
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: 'cursive',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
               textDecoration: 'none',
             }}>
             SHOBUJ
@@ -86,10 +114,10 @@ function Header() {
             spacing={4}>
             {pages.map((page) => (
               <Typography
-                key={page}
+                key={page.label}
                 onClick={handleCloseNavMenu}
                 component={Link}
-                href={'#'}
+                href={page.href}
                 sx={{
                   my: 2,
                   display: 'block',
@@ -100,7 +128,7 @@ function Header() {
                     cursor: 'pointer',
                   },
                 }}>
-                {page}
+                {page.label}
               </Typography>
             ))}
           </Stack>
@@ -137,12 +165,12 @@ function Header() {
               sx={{display: {xs: 'block', md: 'none'}}}>
               <Box>
                 {pages.map((page) => (
-                  <Box key={page} onClick={handleCloseNavMenu}>
+                  <Box key={page.label} onClick={handleCloseNavMenu}>
                     <Typography
                       pr={10}
                       pl={2}
                       component={Link}
-                      href={'#'}
+                      href={page.href}
                       sx={{
                         transition: 'all 0.3s ease',
                         '&:hover': {
@@ -150,7 +178,7 @@ function Header() {
                           cursor: 'pointer',
                         },
                       }}>
-                      {page}
+                      {page.label}
                     </Typography>
                   </Box>
                 ))}

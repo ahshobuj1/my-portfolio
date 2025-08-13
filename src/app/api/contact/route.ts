@@ -1,5 +1,5 @@
 import {NextResponse} from 'next/server';
-import {TContactForm} from '../../../../public/types';
+import {TContactForm} from '../../../types';
 import nodemailer from 'nodemailer';
 
 export async function POST(request: Request) {
@@ -20,9 +20,6 @@ export async function POST(request: Request) {
     if (!emailRegex.test(email)) {
       return NextResponse.json({error: 'Invalid email format'}, {status: 400});
     }
-
-    console.log('[email:]', process.env.EMAIL_USER);
-    console.log('[pass :]', process.env.EMAIL_PASS);
 
     // Nodemailer transporter setup
     const transporter = nodemailer.createTransport({
@@ -169,6 +166,11 @@ export async function POST(request: Request) {
       },
       {
         status: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*', // or your domain
+          'Access-Control-Allow-Methods': 'POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        },
       }
     );
   } catch (error) {

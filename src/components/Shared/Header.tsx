@@ -16,20 +16,24 @@ import Image from 'next/image';
 
 const pages = [
   {
+    label: 'Home',
+    href: '/',
+  },
+  {
     label: 'Projects',
     href: '/projects',
   },
   {
     label: 'Skills',
-    href: '/',
+    href: '#skills',
   },
   {
-    label: 'Pricing',
-    href: '/',
+    label: 'Services',
+    href: '#services',
   },
   {
     label: 'Contact',
-    href: '/',
+    href: '#contact',
   },
 ];
 
@@ -54,18 +58,22 @@ function Header() {
         // bgcolor: '#ffffff70',
         // bgcolor: '#90caf960',
         bgcolor: '#bbdefb40',
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)',
       }}>
       <Container>
         <Toolbar disableGutters>
           {/* Logo large device */}
           {/* <AdbIcon sx={{display: {xs: 'none', md: 'flex'}, mr: 1}} /> */}
-          <Image
-            src={myLogo}
-            alt="logo"
-            height={40}
-            width={40}
-            className="hidden md:flex"
-          />
+          <Link href={'/'}>
+            <Image
+              src={myLogo}
+              alt="logo"
+              height={40}
+              width={40}
+              className="hidden md:flex"
+            />
+          </Link>
           <Typography
             variant="h6"
             noWrap
@@ -83,13 +91,16 @@ function Header() {
           </Typography>
 
           {/* Logo mini device */}
-          <Image
-            src={myLogo}
-            alt="logo"
-            height={40}
-            width={40}
-            className="md:hidden"
-          />
+          <Link href={'/'}>
+            <Image
+              src={myLogo}
+              alt="logo"
+              height={40}
+              width={40}
+              className="md:hidden"
+            />
+          </Link>
+
           <Typography
             variant="h5"
             noWrap
@@ -123,9 +134,11 @@ function Header() {
                   display: 'block',
                   transition: 'all 0.3s ease',
                   pb: 1,
+                  borderBottom: '2px solid transparent',
                   '&:hover': {
                     color: 'primary.main',
                     cursor: 'pointer',
+                    borderBottom: '2px solid #2aa9ff',
                   },
                 }}>
                 {page.label}
@@ -164,7 +177,17 @@ function Header() {
               onClose={handleCloseNavMenu}
               sx={{display: {xs: 'block', md: 'none'}}}>
               <Box>
-                {pages.map((page) => (
+                <div className="p-4 flex flex-col gap-2 pr-20">
+                  {pages.map((page) => (
+                    <Link
+                      key={page.href}
+                      href={page.href}
+                      className="hover:text-primary-main border-l-2 border-white hover:border-primary-main  transition-all font-mono">
+                      {page.label}
+                    </Link>
+                  ))}
+                </div>
+                {/* {pages.map((page) => (
                   <Box key={page.label} onClick={handleCloseNavMenu}>
                     <Typography
                       pr={10}
@@ -181,7 +204,7 @@ function Header() {
                       {page.label}
                     </Typography>
                   </Box>
-                ))}
+                ))} */}
               </Box>
             </Menu>
           </Box>

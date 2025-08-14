@@ -68,7 +68,7 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div id="contact">
       <Container>
         <Box pb={5}>
           <SectionTitle

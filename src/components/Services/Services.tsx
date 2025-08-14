@@ -6,117 +6,129 @@ import SectionTitle from '../UI/SectionTitle';
 
 const Services = () => {
   return (
-    <Container>
-      <Box py={5}>
-        <SectionTitle
-          title="PROVIDE"
-          titleMain="SERVICES"
-          desc="From pixel-perfect frontend to robust backend APIs"
-        />
+    <div id="services">
+      <Container>
+        <Box py={5}>
+          <SectionTitle
+            title="PROVIDE"
+            titleMain="SERVICES"
+            desc="From pixel-perfect frontend to robust backend APIs"
+          />
 
-        {/* <Divider /> */}
+          {/* <Divider /> */}
 
-        <div className="space-y-4 my-5 grid md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center items-stretch">
-          <Stack
-            height={'100%'}
-            border={2}
-            borderColor={'lightgray'}
-            bgcolor={'secondary.main'}
-            borderRadius={2}
-            py={1}
-            px={2}
-            sx={{
-              boxShadow: '4px 4px 4px rgba(0, 153, 255, 0.25)',
-              transition: 'all 0.3s ease',
+          <div className="space-y-4 my-5 grid md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center items-stretch">
+            <Stack
+              height={'100%'}
+              border={2} // Light border
+              borderColor={'#e5e7eb'}
+              bgcolor={'#f8fafc'}
+              borderRadius={2}
+              py={1}
+              px={2}
+              sx={{
+                // boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
+                boxShadow: '4px 4px 4px rgba(0, 153, 255, 0.25)', // subtle shadow
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  boxShadow: '0 10px 15px rgba(37, 99, 235, 0.1)',
+                  borderColor: 'primary.main',
+                  bgcolor: '#ffffff',
+                },
+              }}>
+              <Box>
+                <TbWorldCode className="text-3xl text-primary-main w-24 h-full" />{' '}
+                {/* // primary blue icon */}
+                <Typography
+                  fontSize={20}
+                  my={1}
+                  fontWeight={600}
+                  color="#1e293b">
+                  FULL STACK DEVELOPMENT
+                </Typography>
+                <Typography color="#64748b">
+                  End-to-end web application development using modern
+                  technologies. From UI design to server logic and database
+                  management, I handle the complete development lifecycle.
+                </Typography>
+              </Box>
+            </Stack>
 
-              '&:hover': {
-                boxShadow: '0 8px 16px rgba(0, 153, 255, 0.4)',
-                borderColor: 'primary.main',
-              },
-            }}>
-            <Box>
-              <TbWorldCode className="text-3xl text-primary-main w-24 h-full" />
+            <Stack
+              height={'100%'}
+              border={2} // Light border
+              borderColor={'#e5e7eb'}
+              bgcolor={'#f8fafc'}
+              borderRadius={2}
+              py={1}
+              px={2}
+              sx={{
+                // boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
+                boxShadow: '4px 4px 4px rgba(0, 153, 255, 0.25)', // subtle shadow
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  boxShadow: '0 10px 15px rgba(37, 99, 235, 0.1)',
+                  borderColor: 'primary.main',
+                  bgcolor: '#ffffff',
+                },
+              }}>
+              <Box>
+                <FaLaptopCode className="text-3xl text-primary-main w-24 h-full" />{' '}
+                {/* // primary blue icon */}
+                <Typography
+                  fontSize={20}
+                  my={1}
+                  fontWeight={600}
+                  color="#1e293b">
+                  FRONTEND DEVELOPMENT
+                </Typography>
+                <Typography color="#64748b">
+                  Building responsive, interactive user interfaces with React,
+                  Next.js and modern CSS. Focus on performance, accessibility
+                  and seamless user experiences.
+                </Typography>
+              </Box>
+            </Stack>
 
-              <Typography fontSize={20} my={1} fontWeight={600} color="white">
-                FULL STACK DEVELOPMENT
-              </Typography>
-
-              <Typography color="lightgray">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor,
-                maiores minima. Corporis dignissimos animi exercitationem, nulla
-                eius soluta ea eligendi.
-              </Typography>
-            </Box>
-          </Stack>
-
-          <Stack
-            height={'100%'}
-            border={2}
-            borderColor={'lightgray'}
-            bgcolor={'secondary.main'}
-            borderRadius={2}
-            py={1}
-            px={2}
-            sx={{
-              boxShadow: '4px 4px 4px rgba(0, 153, 255, 0.25)',
-              transition: 'all 0.3s ease',
-
-              '&:hover': {
-                boxShadow: '0 8px 16px rgba(0, 153, 255, 0.4)',
-                borderColor: 'primary.main',
-              },
-            }}>
-            <Box>
-              {/* <div className="w-24 border-1 rounded-r-full border-primary-main ">    </div> */}
-              <FaLaptopCode className="text-2xl text-primary-main w-24 h-full" />
-
-              <Typography fontSize={20} my={1} fontWeight={600} color="white">
-                FRONTEND DEVELOPMENT
-              </Typography>
-
-              <Typography color="lightgray">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor,
-                maiores minima. Corporis dignissimos animi exercitationem, nulla
-                eius soluta ea eligendi.
-              </Typography>
-            </Box>
-          </Stack>
-
-          <Stack
-            height={'100%'}
-            border={2}
-            borderColor={'lightgray'}
-            bgcolor={'secondary.main'}
-            borderRadius={2}
-            py={1}
-            px={2}
-            sx={{
-              boxShadow: '4px 4px 4px rgba(0, 153, 255, 0.25)',
-              transition: 'all 0.3s ease',
-
-              '&:hover': {
-                boxShadow: '0 8px 16px rgba(0, 153, 255, 0.4)',
-                borderColor: 'primary.main',
-              },
-            }}>
-            <Box>
-              {/* <div className="w-24 border-1 rounded-r-full border-primary-main ">    </div> */}
-              <IoServer className="text-3xl text-primary-main w-24 h-full" />
-
-              <Typography fontSize={20} my={1} fontWeight={600} color="white">
-                BACKEND DEVELOPMENT
-              </Typography>
-
-              <Typography color="lightgray">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor,
-                maiores minima. Corporis dignissimos animi exercitationem, nulla
-                eius soluta ea eligendi.
-              </Typography>
-            </Box>
-          </Stack>
-        </div>
-      </Box>
-    </Container>
+            <Stack
+              height={'100%'}
+              border={2} // Light border
+              borderColor={'#e5e7eb'}
+              bgcolor={'#f8fafc'}
+              borderRadius={2}
+              py={1}
+              px={2}
+              sx={{
+                // boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
+                boxShadow: '4px 4px 4px rgba(0, 153, 255, 0.25)', // subtle shadow
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  boxShadow: '0 10px 15px rgba(37, 99, 235, 0.1)',
+                  borderColor: 'primary.main',
+                  bgcolor: '#ffffff',
+                },
+              }}>
+              <Box>
+                <IoServer className="text-3xl text-primary-main w-24 h-full" />{' '}
+                {/* // primary blue icon */}
+                <Typography
+                  fontSize={20}
+                  my={1}
+                  fontWeight={600}
+                  color="#1e293b">
+                  BACKEND DEVELOPMENT
+                </Typography>
+                <Typography color="#64748b">
+                  Robust server-side solutions with Node.js, Express and
+                  databases. API development, authentication systems and
+                  efficient data processing.
+                </Typography>
+              </Box>
+            </Stack>
+          </div>
+        </Box>
+      </Container>
+    </div>
   );
 };
 

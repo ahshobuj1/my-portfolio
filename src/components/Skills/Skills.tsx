@@ -12,11 +12,11 @@ const Skills = () => {
   const [value, setValue] = useState<string>('1');
 
   return (
-    <div>
+    <div id="skills">
       <Container sx={{bgcolor: 'primary.light'}}>
         <Box py={5}>
           <SectionTitle
-            title="TACK"
+            title="TECH"
             titleMain="STACK"
             desc="The technologies powering my projects."
           />

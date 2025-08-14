@@ -11,7 +11,6 @@ import {
 import React, {useState} from 'react';
 import ScrollHoverImage from './ScrollHoverImage';
 import SectionTitle from '../UI/SectionTitle';
-import {MdOutlineMemory} from 'react-icons/md';
 import {FaEye} from 'react-icons/fa';
 import {FaArrowUpRightFromSquare} from 'react-icons/fa6';
 import {projects} from '@/data/projects';
@@ -19,7 +18,7 @@ import {TProject} from '@/types';
 import Link from 'next/link';
 
 const Projects = () => {
-  console.log(projects);
+  // console.log(projects);
 
   const [page, setPage] = useState<number>(1);
   const itemsPerPage = 1;
@@ -43,111 +42,109 @@ const Projects = () => {
             desc="Explore my Frontend, Backend, and MERN STACK work."
           />
 
-          <div>
-            {currentProjects.map((project: TProject) => (
-              <div
-                key={project.slug}
-                className="grid md:grid-cols-2 gap-8 mt-8">
-                <div className="order-2 md:order-1">
-                  <Typography
-                    color="secondary.main"
-                    fontSize={40}
-                    fontWeight={700}
-                    fontFamily={'monospace'}>
-                    {project.category.toUpperCase()}
-                  </Typography>
+          <div className="mt-4">
+            <Box
+              border={2}
+              borderColor={'#e5e7eb'}
+              bgcolor={'#f8fafc'}
+              borderRadius={2}
+              py={1}
+              px={2}
+              sx={{
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
+                // boxShadow: '4px 4px 4px rgba(0, 153, 255, 0.25)',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  boxShadow: '0 10px 15px rgba(37, 99, 235, 0.1)',
+                  borderColor: 'primary.main',
+                  bgcolor: '#ffffff',
+                },
+              }}>
+              {currentProjects.map((project: TProject) => (
+                <div
+                  key={project.slug}
+                  className="grid md:grid-cols-2 gap-8 my-4">
+                  <div className="order-2 md:order-1">
+                    <Link href={`/projects/${project.id}`}>
+                      <Typography
+                        color="secondary.main"
+                        fontSize={40}
+                        fontWeight={700}
+                        fontFamily={'monospace'}>
+                        {project.category.toUpperCase()}
+                      </Typography>
 
-                  <Typography
-                    fontSize={25}
-                    fontWeight={700}
-                    color="secondary.main">
-                    {project.name}
-                  </Typography>
+                      <Typography
+                        fontSize={25}
+                        fontWeight={700}
+                        color="secondary.main">
+                        {project.name}
+                      </Typography>
 
-                  <Typography mb={4}>{project.description}</Typography>
+                      <Typography mb={4}>{project.description}</Typography>
+                    </Link>
 
-                  <Typography
-                    color="secondary.main"
-                    fontSize={22}
-                    fontWeight={700}
-                    letterSpacing={1}
-                    fontFamily="monospace"
-                    textTransform="uppercase"
-                    sx={{display: 'flex', alignItems: 'center', gap: 1}}>
-                    <MdOutlineMemory
-                      size={30}
-                      // color="#2aa9ff"
+                    {/* <Divider sx={{width: '175px', mb: 1}} /> */}
+
+                    <Box my={1} display="flex" flexWrap="wrap" gap={1}>
+                      {project?.skills?.slice(0, 4)?.map((tech) => (
+                        <span
+                          key={tech}
+                          className=" flex items-center justify-center bg-primary-main text-white px-2 py-1 rounded text-xs font-semibold">
+                          {tech}
+                        </span>
+                      ))}
+
+                      {project?.skills?.length > 4 && (
+                        <span className="text-gray-500 text-xs py-1">
+                          +{project.skills.length - 4} more
+                        </span>
+                      )}
+                    </Box>
+
+                    <Divider sx={{mt: '20px', mb: 4}} />
+
+                    <Button
+                      LinkComponent={Link}
+                      href={project.liveLink}
+                      startIcon={<FaArrowUpRightFromSquare />}
+                      sx={{
+                        textTransform: 'none',
+                        px: 3,
+                        py: 1,
+                        borderRadius: 2,
+                        fontWeight: 500,
+                        mr: 2,
+                        bgcolor: 'secondary.main',
+                      }}>
+                      Live Preview
+                    </Button>
+
+                    <Button
+                      LinkComponent={Link}
+                      href={`/projects/${project.id}`}
+                      startIcon={<FaEye />}
+                      sx={{
+                        textTransform: 'none',
+                        px: 3,
+                        py: 1,
+                        borderRadius: 2,
+                        fontWeight: 500,
+                        bgcolor: 'secondary.main',
+                      }}>
+                      View Details
+                    </Button>
+                  </div>
+
+                  <div className="order-1 md:order-2">
+                    <ScrollHoverImage
+                      src={project?.image}
+                      alt="project image"
                     />
-                    Technology:
-                  </Typography>
-
-                  {/* <Divider sx={{width: '175px', mb: 1}} /> */}
-
-                  <Box my={1} display="flex" flexWrap="wrap" gap={1}>
-                    {project?.skills?.map((tech) => (
-                      <Box
-                        key={tech}
-                        px={2}
-                        py={0.5}
-                        borderRadius={1}
-                        border="1px solid"
-                        borderColor="primary.main"
-                        color="primary.main"
-                        fontSize={14}
-                        fontWeight={500}
-                        sx={{
-                          transition: 'all 0.3s',
-                          cursor: 'default',
-                          '&:hover': {
-                            backgroundColor: 'primary.main',
-                            color: 'white',
-                            cursor: 'pointer',
-                          },
-                        }}>
-                        {tech}
-                      </Box>
-                    ))}
-                  </Box>
-
-                  <Divider sx={{mt: '10px', mb: 4}} />
-
-                  <Button
-                    LinkComponent={Link}
-                    href={project.liveLink}
-                    startIcon={<FaArrowUpRightFromSquare />}
-                    sx={{
-                      textTransform: 'none',
-                      px: 3,
-                      py: 1,
-                      borderRadius: 2,
-                      fontWeight: 500,
-                      mr: 2,
-                      bgcolor: 'secondary.main',
-                    }}>
-                    Live Preview
-                  </Button>
-
-                  <Button
-                    LinkComponent={Link}
-                    href={`/projects/${project.id}`}
-                    startIcon={<FaEye />}
-                    sx={{
-                      textTransform: 'none',
-                      px: 3,
-                      py: 1,
-                      borderRadius: 2,
-                      fontWeight: 500,
-                      bgcolor: 'secondary.main',
-                    }}>
-                    View Details
-                  </Button>
+                  </div>
                 </div>
-
-                <div className="order-1 md:order-2">
-                  <ScrollHoverImage src={project?.image} alt="project image" />
-                </div>
-              </div>
-            ))}
+              ))}
+            </Box>
           </div>
 
           <Box

@@ -46,7 +46,7 @@ export default function ProjectCard({project}: {project: TProject}) {
                 </span>
               ))}
               {project?.skills?.length > 4 && (
-                <span className="text-gray-500 text-xs">
+                <span className="text-gray-500 text-xs py-1">
                   +{project.skills.length - 4} more
                 </span>
               )}

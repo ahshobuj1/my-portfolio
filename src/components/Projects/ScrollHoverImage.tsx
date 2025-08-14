@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import type {StaticImageData} from 'next/image';
+import Image, {StaticImageData} from 'next/image';
 
 interface IHoverImageProps {
   src: string | StaticImageData;
@@ -12,8 +11,8 @@ const ScrollHoverImage = ({src, alt}: IHoverImageProps) => {
       <Image
         src={src}
         alt={alt}
-        width={undefined}
-        height={undefined}
+        width={300}
+        height={300}
         className="w-full transition-transform duration-[7000ms] 
         ease-linear group-hover:-translate-y-[78%] cursor-pointer"
       />

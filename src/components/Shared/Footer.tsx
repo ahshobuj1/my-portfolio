@@ -21,15 +21,29 @@ const Footer = () => {
               href={'/'}>
               Home
             </Link>
+
             <Link
               className="hover:text-primary-main transition-colors"
-              href={'#'}>
+              href={'/projects'}>
+              Projects
+            </Link>
+
+            <Link
+              className="hover:text-primary-main transition-colors"
+              href={'#skills'}>
               Contact
             </Link>
+
             <Link
               className="hover:text-primary-main transition-colors"
-              href={'#'}>
-              Projects
+              href={'#services'}>
+              Services
+            </Link>
+
+            <Link
+              className="hover:text-primary-main transition-colors"
+              href={'#contact'}>
+              Contact
             </Link>
           </Box>
         </Stack>

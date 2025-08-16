@@ -3,11 +3,12 @@ import TypeWriter from '../UI/TypeWriter';
 import Photo from './Photo';
 import {IoMdCloudDownload} from 'react-icons/io';
 import SocialLinks from '../UI/SocialLinks';
+import Link from 'next/link';
 
 const HeroSection = () => {
   return (
     <>
-      <Container sx={{bgcolor: '#e4f6fd40'}}>
+      <Container>
         <Stack
           direction={{xs: 'column-reverse', md: 'row'}}
           justifyContent="space-between"
@@ -64,6 +65,8 @@ const HeroSection = () => {
               <SocialLinks />
 
               <Button
+                component={Link}
+                href="https://drive.google.com/file/d/1S4PekLxvbVJj3Z1H9amTePBG6WpzqIur/view"
                 startIcon={<IoMdCloudDownload />}
                 sx={{
                   textTransform: 'none',

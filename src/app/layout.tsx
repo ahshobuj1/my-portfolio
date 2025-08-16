@@ -22,23 +22,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{children: React.ReactNode}>) {
   return (
-    <Providers>
-      <html lang="en">
-        <body className={`${plusJakarta.variable} antialiased`}>
+    <html lang="en">
+      <body
+        className={`${plusJakarta.variable} antialiased transition-colors duration-300 dark:bg-[#0f1b2b] text-gray-900 dark:text-gray-200`}>
+        <Providers>
           <AppRouterCacheProvider>
-            {/* Background Container (fixed position) */}
+            {/* Background Grid (fixed) */}
             <div
-              className="fixed inset-0 -z-50 "
+              className="fixed inset-0 -z-50 bg-primary-main/10 dark:bg-[#0f1b2b] transition-colors duration-300"
               style={{
-                background: '#f8fafc',
                 backgroundImage: `
-              linear-gradient(to right, #e2e8f0 1px, transparent 1px),
-              linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)
-            `,
+                  linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+                  linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)
+                `,
                 backgroundSize: '20px 30px',
                 WebkitMaskImage:
                   'radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)',
@@ -47,18 +45,17 @@ export default function RootLayout({
               }}
             />
 
-            {/* Content Container (relative position) */}
-            <div className="relative z-0 min-h-screen w-full">
+            {/* Main Content */}
+            <div className="relative z-0 min-h-screen w-full transition-colors duration-300 dark:bg-[#0f1b2b]">
               <div className="px-1 lg:px-0">
-                {/* <Navbar /> */}
                 <Header />
                 <main className="relative z-10">{children}</main>
                 <Footer />
               </div>
             </div>
           </AppRouterCacheProvider>
-        </body>
-      </html>
-    </Providers>
+        </Providers>
+      </body>
+    </html>
   );
 }

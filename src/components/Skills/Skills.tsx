@@ -13,7 +13,7 @@ const Skills = () => {
 
   return (
     <div id="skills">
-      <Container sx={{bgcolor: 'primary.light'}}>
+      <Container sx={{bgcolor: 'background.paper'}}>
         <Box py={5}>
           <SectionTitle
             title="TECH"

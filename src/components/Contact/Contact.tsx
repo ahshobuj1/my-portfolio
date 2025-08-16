@@ -96,7 +96,7 @@ const Contact = () => {
               <Box>
                 <Box>
                   <div className="flex items-center gap-2 p-2 mt-2">
-                    <span className="text-2xl text-secondary-main">
+                    <span className="text-2xl text-secondary-main dark:text-primary-dark">
                       <FaPhoneSquareAlt />
                     </span>
                     <div>
@@ -106,7 +106,7 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-center gap-2 p-2">
-                    <span className="text-2xl text-secondary-main">
+                    <span className="text-2xl text-secondary-main dark:text-primary-dark">
                       <MdOutlineAlternateEmail />
                     </span>
                     <div>
@@ -118,7 +118,7 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-center gap-2 p-2">
-                    <span className="text-2xl text-secondary-main">
+                    <span className="text-2xl text-secondary-main dark:text-primary-dark">
                       <MdLocationPin />
                     </span>
                     <div>
@@ -138,7 +138,7 @@ const Contact = () => {
             <Stack
               flexDirection={'column'}
               gap={3}
-              bgcolor={'#f0f4f9'}
+              bgcolor={'background.paper'}
               px={5}
               py={3}
               borderRadius={2}>

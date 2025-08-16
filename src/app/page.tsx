@@ -8,7 +8,7 @@ import Skills from '@/components/Skills/Skills';
 
 export default function Home() {
   return (
-    <div>
+    <div className="dark:bg-[#12304b80]">
       <HeroSection />
       <Services />
       {/* <About /> */}

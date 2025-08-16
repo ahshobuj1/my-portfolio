@@ -28,7 +28,7 @@ const SkillCard = ({item}: {item: ISkillProps}) => {
           },
         }}>
         <Box bgcolor={'gray-50'} borderRadius={1} padding={1}>
-          <span className="text-secondary-main text-4xl md:text-5xl">
+          <span className="text-secondary-main dark:text-primary-dark text-4xl md:text-5xl">
             {item.icon}
           </span>
         </Box>

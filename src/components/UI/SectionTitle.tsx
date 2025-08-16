@@ -9,10 +9,16 @@ interface SectionTitleProps {
 const SectionTitle = ({title, titleMain, desc}: SectionTitleProps) => {
   return (
     <Box>
-      <Typography fontSize={{xs: 30, md: 50}} fontWeight={700}>
-        {title} <span className="text-primary-main">{titleMain}</span>
+      <Typography
+        fontSize={{xs: 30, md: 50}}
+        fontWeight={700}
+        color="text.primary">
+        {title}{' '}
+        <span className="text-primary-main dark:text-primary-dark">
+          {titleMain}
+        </span>
       </Typography>
-      <Typography>{desc}</Typography>
+      <Typography color="text.secondary">{desc}</Typography>
     </Box>
   );
 };

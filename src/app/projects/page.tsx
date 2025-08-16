@@ -12,10 +12,10 @@ export default function ProjectsPage() {
         <div>
           {/* Header */}
           <div className="text-center my-12 ">
-            <h1 className="text-4xl md:text-5xl font-bold !text-secondary-main/90  dark:text-white mb-4 uppercase">
+            <h1 className="text-4xl md:text-5xl font-bold text-secondary-main dark:text-white mb-4 uppercase">
               My Projects
             </h1>
-            <p className="text-xl !text-secondary-main/70 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary-main dark:text-white max-w-3xl mx-auto">
               A collection of web applications, SaaS products, and full-stack
               solutions I&apos;ve built using modern technologies
             </p>
@@ -24,7 +24,7 @@ export default function ProjectsPage() {
           {/* Featured Projects */}
           {featuredProjects.length > 0 && (
             <section className="mb-16">
-              <h2 className="text-2xl font-bold !text-secondary-main dark:text-white mb-8 uppercase">
+              <h2 className="text-2xl font-bold text-secondary-main dark:text-white mb-8 uppercase">
                 Featured Projects
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2  gap-8">
@@ -37,7 +37,7 @@ export default function ProjectsPage() {
 
           {/* All Projects */}
           <section>
-            <h2 className="text-2xl font-bold !text-secondary-main dark:text-white mb-8 uppercase">
+            <h2 className="text-2xl font-bold text-secondary-main dark:text-white mb-8 uppercase">
               All Projects
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

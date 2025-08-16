@@ -34,7 +34,7 @@ const Projects = () => {
 
   return (
     <div>
-      <Container sx={{bgcolor: 'primary.light'}}>
+      <Container>
         <Box py={5}>
           <SectionTitle
             title="LATEST"
@@ -46,7 +46,7 @@ const Projects = () => {
             <Box
               border={2}
               borderColor={'#e5e7eb'}
-              bgcolor={'#f8fafc'}
+              bgcolor={'background.paper'}
               borderRadius={2}
               py={1}
               px={2}
@@ -57,7 +57,7 @@ const Projects = () => {
                 '&:hover': {
                   boxShadow: '0 10px 15px rgba(37, 99, 235, 0.1)',
                   borderColor: 'primary.main',
-                  bgcolor: '#ffffff',
+                  bgcolor: 'background.paper/10',
                 },
               }}>
               {currentProjects.map((project: TProject) => (
@@ -77,7 +77,14 @@ const Projects = () => {
                       <Typography
                         fontSize={25}
                         fontWeight={700}
-                        color="secondary.main">
+                        color="text.primary"
+                        // sx={(theme) => ({
+                        //   color:
+                        //     theme.palette.mode === 'light'
+                        //       ? '#12304b'
+                        //       : '#ffffff',
+                        // })}
+                      >
                         {project.name}
                       </Typography>
 
@@ -90,7 +97,7 @@ const Projects = () => {
                       {project?.skills?.slice(0, 4)?.map((tech) => (
                         <span
                           key={tech}
-                          className=" flex items-center justify-center bg-primary-main text-white px-2 py-1 rounded text-xs font-semibold">
+                          className=" flex items-center justify-center bg-primary-main dark:bg-primary-dark text-white px-2 py-1 rounded text-xs font-semibold">
                           {tech}
                         </span>
                       ))}

@@ -2,7 +2,7 @@
 
 import {createTheme} from '@mui/material/styles';
 
-export const theme = createTheme({
+export const lightTheme = createTheme({
   // palette: {
   //   primary: {
   //     main: '#2563EB',
@@ -13,6 +13,7 @@ export const theme = createTheme({
   //   },
   // },
   palette: {
+    mode: 'light',
     primary: {
       main: '#2aa9ff',
       light: '#2aa9ff08',
@@ -20,6 +21,13 @@ export const theme = createTheme({
     secondary: {
       main: '#12304b',
       // main: '#00ff99',
+    },
+    background: {
+      paper: '#f8fafc',
+    },
+    text: {
+      primary: '#12304b',
+      secondary: '#12304b',
     },
   },
   components: {
@@ -47,6 +55,59 @@ export const theme = createTheme({
     MuiTypography: {
       defaultProps: {
         color: '#424242',
+      },
+    },
+  },
+});
+
+export const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#22c55e', // green for buttons/titles
+    },
+    secondary: {
+      main: '#4ade80', // softer green accent
+    },
+    background: {
+      default: '#0f1b2b', // best dark background (not pure black)
+      paper: '#12304b', // section/card background
+    },
+    text: {
+      primary: '#e0e7ff', // off-white
+      secondary: '#9ca3af', // gray
+    },
+
+    // text: {
+    //   primary: '#e5e7eb', // off-white
+    //   secondary: '#9ca3af', // gray
+    // },
+  },
+  components: {
+    MuiButton: {
+      defaultProps: {
+        variant: 'contained',
+        style: {
+          padding: '8px 24px',
+          color: '#fafafa',
+        },
+      },
+    },
+    MuiContainer: {
+      defaultProps: {
+        maxWidth: 'lg',
+      },
+    },
+    MuiStack: {
+      defaultProps: {
+        direction: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+    },
+    MuiTypography: {
+      defaultProps: {
+        color: '#f1f5f9',
       },
     },
   },

@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -9,10 +8,15 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import {Stack} from '@mui/material';
+import {Avatar, Stack} from '@mui/material';
 import Link from 'next/link';
 import myLogo from '@/assets/images/my-logo.png';
 import Image from 'next/image';
+import BedtimeIcon from '@mui/icons-material/Bedtime';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import {useState} from 'react';
+import {useThemeMode} from '@/lib/Providers/Providers';
+// import {useTheme} from '@/lib/theme/ThemeContext';
 
 const pages = [
   {
@@ -38,9 +42,9 @@ const pages = [
 ];
 
 function Header() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
+  const {mode, toggleTheme} = useThemeMode();
+
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -110,7 +114,6 @@ function Header() {
               mx: 1,
               display: {xs: 'flex', md: 'none'},
               flexGrow: 1,
-              fontFamily: 'cursive',
               fontWeight: 700,
               letterSpacing: '.3rem',
               textDecoration: 'none',
@@ -120,20 +123,19 @@ function Header() {
 
           {/* Nav Items */}
           <Stack
-            sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}
+            sx={{
+              flexGrow: 1,
+              display: {xs: 'none', md: 'flex'},
+            }}
             justifyContent={'end'}
             spacing={4}>
             {pages.map((page) => (
               <Typography
                 key={page.label}
-                onClick={handleCloseNavMenu}
                 component={Link}
                 href={page.href}
                 sx={{
-                  my: 2,
-                  display: 'block',
                   transition: 'all 0.3s ease',
-                  pb: 1,
                   borderBottom: '2px solid transparent',
                   '&:hover': {
                     color: 'primary.main',
@@ -145,6 +147,32 @@ function Header() {
               </Typography>
             ))}
           </Stack>
+
+          {/** Toggle theme button */}
+
+          <Box ml={{xs: 0, md: 4}} sx={{cursor: 'pointer'}}>
+            <Avatar
+              sx={{
+                bgcolor: 'transparent',
+                // borderColor: 'primary.main',
+                // border: '1px solid transparent',
+                // transition: ' 0.3s',
+                // '&:hover': {
+                //   borderColor: 'primary.main',
+                // },
+              }}>
+              <span onClick={toggleTheme}>
+                {mode === 'dark' ? (
+                  <LightModeIcon className="text-white transition-colors hover:text-primary-dark" />
+                ) : (
+                  <BedtimeIcon className="text-black transition-colors hover:text-primary-main " />
+                )}
+              </span>
+              {/* <Button onClick={() => setToggleThemeIcon(!toggleThemeIcon)}>
+                {toggleThemeIcon ? <BedtimeIcon /> : <LightModeIcon />}
+              </Button> */}
+            </Avatar>
+          </Box>
 
           {/* ----------menu bar---------------- */}
           <Box
@@ -182,7 +210,7 @@ function Header() {
                     <Link
                       key={page.href}
                       href={page.href}
-                      className="hover:text-primary-main border-l-2 border-white hover:border-primary-main  transition-all font-mono">
+                      className="hover:text-primary-main hover:dark:text-primary-dark border-l-2 border-transparent hover:border-primary-main hover:dark:border-primary-dark transition-all">
                       {page.label}
                     </Link>
                   ))}

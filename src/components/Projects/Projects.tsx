@@ -117,11 +117,10 @@ const Projects = () => {
                       startIcon={<FaArrowUpRightFromSquare />}
                       sx={{
                         textTransform: 'none',
-                        px: 3,
                         py: 1,
                         borderRadius: 2,
                         fontWeight: 500,
-                        mr: 2,
+                        mr: 1,
                         bgcolor: 'secondary.main',
                       }}>
                       Live Preview
@@ -133,13 +132,12 @@ const Projects = () => {
                       startIcon={<FaEye />}
                       sx={{
                         textTransform: 'none',
-                        px: 3,
                         py: 1,
                         borderRadius: 2,
                         fontWeight: 500,
                         bgcolor: 'secondary.main',
                       }}>
-                      View Details
+                      View
                     </Button>
                   </div>
 

@@ -27,7 +27,7 @@ import {MdDesignServices} from 'react-icons/md'; // Material UI
 export const frontendSkills = [
   {name: 'HTML5', desc: 'Markup', icon: <FaHtml5 />},
   {name: 'CSS3', desc: 'Styling', icon: <FaCss3Alt />},
-  {name: 'Tailwind CSS', desc: 'Utility Framework', icon: <SiTailwindcss />},
+  {name: 'Tailwind', desc: 'Utility Framework', icon: <SiTailwindcss />},
   {name: 'JavaScript', desc: 'Language', icon: <FaJs />},
   {name: 'TypeScript', desc: 'Language', icon: <SiTypescript />},
   {name: 'React JS', desc: 'Library', icon: <FaReact />},
@@ -49,7 +49,7 @@ export const backendSkills = [
 //  Other / Tools / Payment
 export const otherSkills = [
   {name: 'Figma', desc: 'UI Design', icon: <SiFigma />},
-  {name: 'SSLCommerz', desc: 'Payment', icon: <FaLock />},
+  {name: 'SSL Commerz', desc: 'Payment', icon: <FaLock />},
   {name: 'Stripe.js', desc: 'Payment', icon: <FaStripe />},
   {name: 'Git', desc: 'Version Control', icon: <FaGitAlt />},
 ];

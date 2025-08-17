@@ -45,11 +45,12 @@ const Photo = () => {
             cx="253"
             cy="253"
             r="250"
-            stroke="#2aa9ff"
+            className="stroke-[#2aa9ff] dark:stroke-[#22c55e]"
+            // stroke="#2aa9ff"
             strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"
-            initial={{strokeDasharray: '24 10 0 0'}}
+            initial={{strokeDasharray: '24 10 npm run dev0 0'}}
             animate={{
               strokeDasharray: ['15 120 25 25', '16 25 92 72', '4 250 22 22'],
               rotate: [120, 360],
